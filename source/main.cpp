@@ -1,39 +1,27 @@
-/*
- * =====================================================================================
- *
- *       Filename:  main.cpp
- *
- *    Description:  #
- *
- *        Version:  1.0
- *        Created:  11/04/2017 10:10:06 PM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  YOUR NAME (Carl Patterson), 
- *   Organization:  
- *
- * =====================================================================================
- */
-
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <vector>
 #include <cstdlib>
-#include "getWords.h"
+#include <cctype>
+#include "inputUtils.h"
+#include "outputUtils.h"
+#include "processing.h"
 
 using namespace std;
 
 int main() {
+    vector<string> words;
     ifstream file;
+    //string filename = getFilename();
+    file.open(getFilename().c_str());
     if(!file) { 
         cout << "Unable to Open file" << endl;
         exit(EXIT_FAILURE);
     }
-    //file.open("") 
-    
+    getWords(file, words);
+    rmvpct(words);
+    printVectors(words);
 
-    cout << "test" << endl; 
     return 0;
 }
