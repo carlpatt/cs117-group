@@ -12,6 +12,10 @@ int countWords(const vector<string>& w);
 //removes punctuation from the words.
 void removePunct(string& str);
 
+//temporary placeholder for testing
 void rmvpct(vector<string>& v);
+
+//separates words that are joined incorrectly by punctuation
+void separateWords(string& str, vector<string>& a);
 
 #endif

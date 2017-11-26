@@ -20,7 +20,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
     getWords(file, words);
-    rmvpct(words);
+    //rmvpct(words);
     printVectors(words);
 
     return 0;
