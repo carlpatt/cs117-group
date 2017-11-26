@@ -40,10 +40,12 @@ void getWords(ifstream& inp, vector<string>& v) {
 void separateWords(string& str, vector<string>& a) {
     string tmp, punct = ".,:;!?";    
     for(unsigned int i =0; i < str.size(); i++) {
-        if(ispunct(str[i])) {
-            tmp = str.substr(i+1, str.size());
-            a.push_back(tmp);
-            str.erase(i, str.size());
+        for(unsigned int x =0; x < punct.size(); x++) {
+            if(str[i] == punct[x]) {
+                tmp = str.substr(i+1, str.size());
+                a.push_back(tmp);
+                str.erase(i, str.size());
+            }
         }
     } 
 }
